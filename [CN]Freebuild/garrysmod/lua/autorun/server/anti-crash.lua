@@ -52,4 +52,3 @@ local Lag = SysTime() - RealTime()
 			
 	end)
 end
-
