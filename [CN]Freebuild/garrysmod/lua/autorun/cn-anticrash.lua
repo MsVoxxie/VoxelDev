@@ -27,6 +27,8 @@ local CNStartUpLag = (SysTime() - RealTime())+4
         print("##################################")
         print("## [CN] Anti Crash Tick Updated ##")
         print("##################################")
+        print("[CN] Tick Set To: "..CNStartUpLag)
+        print("")
 	end)
 
     hook.Add("Think","CNAntiCrashThink",function()
