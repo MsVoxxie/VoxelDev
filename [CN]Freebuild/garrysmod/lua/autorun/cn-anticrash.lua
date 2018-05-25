@@ -16,13 +16,13 @@ if SERVER then
 
 local CNLagChatPrint = false 
 
-local CNStartUpLag = SysTime() - RealTime()
+local CNStartUpLag = (SysTime() - RealTime())+2
 
     hook.Add("Think","CNAntiCrashThink",function()
 
     local CNLagDifference = SysTime() - RealTime()
 
-        if(CNLagDifference >= CNStartUpLag + 10) then
+        if(CNLagDifference >= CNStartUpLag) then
             for k, v in pairs(ents.GetAll()) do
                 local phys = v:GetPhysicsObject()
                 if(IsValid(phys)) then
@@ -39,7 +39,7 @@ local CNStartUpLag = SysTime() - RealTime()
                     CNLagChatPrint = true
                 end
             end
-        if(CNLagDifference < CNStartUpLag + 10) then
+        if(CNLagDifference < CNStartUpLag) then
             CNLagChatPrint = false
         end
     end)
